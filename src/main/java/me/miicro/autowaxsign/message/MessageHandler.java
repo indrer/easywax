@@ -16,8 +16,13 @@ public class MessageHandler {
     private static final Component WAX_CANCELLED =
             PREFIX.append(Component.text("Sign waxing cancelled. Run /waxit again and punch a sign to wax it.", NamedTextColor.WHITE));
 
+    private static final Component WAX_SUCCESSFUL = PREFIX.append(Component.text("Sign waxed.", NamedTextColor.WHITE));
+
     private static final Component ONLY_PLAYER_CAN_SEND_COMMAND = PREFIX.append(Component.text("Only player can send command.", NamedTextColor.RED));
 
+    public static void sendWaxSuccess(Player player) {
+        player.sendMessage(WAX_SUCCESSFUL);
+    }
 
     public static void sendReadyToWax(Player player) {
         player.sendMessage(READY_TO_WAX);

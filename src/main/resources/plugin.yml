@@ -6,5 +6,5 @@ author: miicro
 api-version: "1.21.11"
 commands:
   waxit:
-    description: Waxes the sign that the player punches. Punching anything else cancels the command
+    description: Waxes the sign that the player punches. Punching any other block cancels the command
     usage: /waxit

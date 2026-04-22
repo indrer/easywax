@@ -36,6 +36,7 @@ public class SignWaxHandler {
         sign.setWaxed(true);
         sign.update();
         playersWaxingSigns.remove(uuid);
+        MessageHandler.sendWaxSuccess(player);
     }
 
     public void addPlayerWaxingSign(UUID uuid) {
