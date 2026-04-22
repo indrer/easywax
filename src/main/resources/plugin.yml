@@ -4,3 +4,7 @@ main: me.miicro.autowaxsign.AutoWaxSign
 description: Waxes signs automatically so others can't edit them
 author: miicro
 api-version: "1.21.11"
+commands:
+  waxit:
+    description: Waxes the sign that the player punches. Punching anything else cancels the command
+    usage: /waxit

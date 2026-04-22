@@ -5,23 +5,21 @@ import me.miicro.autowaxsign.AutoWaxSign;
 import net.kyori.adventure.text.Component;
 import org.bukkit.block.Sign;
 import org.bukkit.block.sign.Side;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 
-import java.util.Arrays;
-
 public class SignChangeListener implements Listener {
 
     private final AutoWaxSign plugin;
+
     public SignChangeListener(AutoWaxSign plugin) {
         this.plugin = plugin;
     }
 
     @EventHandler
     public void onSignChange(SignChangeEvent e) {
-        if(e.getPlayer().isOp()){
+        if (e.getPlayer().isOp()) {
             return;
         }
         Sign sign = (Sign) e.getBlock().getState();
@@ -31,12 +29,12 @@ public class SignChangeListener implements Listener {
 
     @EventHandler
     public void onPlayerSignOpen(PlayerOpenSignEvent e) {
-        if(e.getPlayer().isOp()){
+        if (e.getPlayer().isOp()) {
             return;
         }
         Sign sign = e.getSign();
         boolean emptySign = isEmptySing(sign);
-        if(!emptySign || e.getCause().equals(PlayerOpenSignEvent.Cause.INTERACT)) {
+        if (!emptySign || e.getCause().equals(PlayerOpenSignEvent.Cause.INTERACT)) {
             sign.setWaxed(true);
             e.setCancelled(true);
             return;
