@@ -1,7 +1,7 @@
-package me.miicro.autowaxsign.handler;
+package me.miicro.easywax.handler;
 
-import me.miicro.autowaxsign.AutoWaxSign;
-import me.miicro.autowaxsign.message.MessageHandler;
+import me.miicro.easywax.EasyWax;
+import me.miicro.easywax.message.MessageHandler;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
@@ -14,11 +14,11 @@ import java.util.logging.Logger;
 public class SignWaxHandler {
 
     private final HashSet<UUID> playersWaxingSigns = new HashSet<>();
-    private final AutoWaxSign autoWaxSign;
+    private final EasyWax easyWax;
     private final Logger logger;
 
-    public SignWaxHandler(AutoWaxSign autoWaxSign, Logger logger) {
-        this.autoWaxSign = autoWaxSign;
+    public SignWaxHandler(EasyWax easyWax, Logger logger) {
+        this.easyWax = easyWax;
         this.logger = logger;
     }
 
@@ -40,7 +40,7 @@ public class SignWaxHandler {
     }
 
     public void addPlayerWaxingSign(UUID uuid) {
-        Player player = autoWaxSign.getServer().getPlayer(uuid);
+        Player player = easyWax.getServer().getPlayer(uuid);
         if (player == null || !player.isOnline()) {
             playersWaxingSigns.remove(uuid);
             logger.warning("Player " + uuid + " could not be found.");

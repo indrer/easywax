@@ -1,6 +1,6 @@
-package me.miicro.autowaxsign.listiner;
+package me.miicro.easywax.listiner;
 
-import me.miicro.autowaxsign.message.MessageHandler;
+import me.miicro.easywax.message.MessageHandler;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

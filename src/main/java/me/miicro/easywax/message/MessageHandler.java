@@ -1,4 +1,4 @@
-package me.miicro.autowaxsign.message;
+package me.miicro.easywax.message;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;

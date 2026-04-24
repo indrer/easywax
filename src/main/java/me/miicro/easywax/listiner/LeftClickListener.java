@@ -1,7 +1,7 @@
-package me.miicro.autowaxsign.listiner;
+package me.miicro.easywax.listiner;
 
-import me.miicro.autowaxsign.AutoWaxSign;
-import me.miicro.autowaxsign.handler.SignWaxHandler;
+import me.miicro.easywax.EasyWax;
+import me.miicro.easywax.handler.SignWaxHandler;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -11,7 +11,7 @@ public class LeftClickListener implements Listener {
 
     private final SignWaxHandler signWaxHandler;
 
-    public LeftClickListener(AutoWaxSign plugin, SignWaxHandler signWaxHandler) {
+    public LeftClickListener(EasyWax plugin, SignWaxHandler signWaxHandler) {
         this.signWaxHandler = signWaxHandler;
     }
 

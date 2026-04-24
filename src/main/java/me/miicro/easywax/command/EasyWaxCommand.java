@@ -1,7 +1,7 @@
-package me.miicro.autowaxsign.command;
+package me.miicro.easywax.command;
 
-import me.miicro.autowaxsign.handler.SignWaxHandler;
-import me.miicro.autowaxsign.message.MessageHandler;
+import me.miicro.easywax.handler.SignWaxHandler;
+import me.miicro.easywax.message.MessageHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

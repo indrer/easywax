@@ -1,7 +1,7 @@
 name: AutoWaxSign
 version: 1.0.0
-main: me.miicro.autowaxsign.AutoWaxSign
-description: Waxes signs automatically so others can't edit them
+main: me.miicro.easywax.EasyWax
+description: Allows waxing signs without honeycomb
 author: miicro
 api-version: "1.21.11"
 commands:

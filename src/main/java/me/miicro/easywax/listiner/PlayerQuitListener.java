@@ -1,6 +1,6 @@
-package me.miicro.autowaxsign.listiner;
+package me.miicro.easywax.listiner;
 
-import me.miicro.autowaxsign.handler.SignWaxHandler;
+import me.miicro.easywax.handler.SignWaxHandler;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
