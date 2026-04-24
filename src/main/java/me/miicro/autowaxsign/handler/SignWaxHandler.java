@@ -27,7 +27,7 @@ public class SignWaxHandler {
         if (!playersWaxingSigns.contains(uuid)) {
             return;
         }
-        if (!isSign(block)) {
+        if (block == null || !isSign(block)) {
             MessageHandler.sendWaxCancelled(player);
             playersWaxingSigns.remove(uuid);
             return;

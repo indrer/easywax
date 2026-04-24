@@ -2,7 +2,6 @@ package me.miicro.autowaxsign.listiner;
 
 import me.miicro.autowaxsign.AutoWaxSign;
 import me.miicro.autowaxsign.handler.SignWaxHandler;
-import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -18,15 +17,10 @@ public class LeftClickListener implements Listener {
 
     @EventHandler
     public void leftClick(PlayerInteractEvent e) {
-        if (e.getAction() != Action.LEFT_CLICK_BLOCK) {
+        if (e.getAction() != Action.LEFT_CLICK_BLOCK && e.getAction() != Action.LEFT_CLICK_AIR) {
             return;
         }
-        Block block = e.getClickedBlock();
-        if (block == null) {
-            return;
-        }
-
-        signWaxHandler.attemptToWax(block, e.getPlayer());
+        signWaxHandler.attemptToWax(e.getClickedBlock(), e.getPlayer());
         return;
     }
 }
