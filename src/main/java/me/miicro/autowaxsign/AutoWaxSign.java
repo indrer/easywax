@@ -4,6 +4,7 @@ import me.miicro.autowaxsign.command.EasyWaxCommand;
 import me.miicro.autowaxsign.handler.SignWaxHandler;
 import me.miicro.autowaxsign.listiner.LeftClickListener;
 import me.miicro.autowaxsign.listiner.PlayerQuitListener;
+import me.miicro.autowaxsign.listiner.SignChangeListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -20,6 +21,6 @@ public class AutoWaxSign extends JavaPlugin {
         Objects.requireNonNull(this.getCommand(COMMAND)).setExecutor(new EasyWaxCommand(signWaxHandler));
         this.getServer().getPluginManager().registerEvents(new LeftClickListener(this, signWaxHandler), this);
         this.getServer().getPluginManager().registerEvents(new PlayerQuitListener(signWaxHandler), this);
-        //this.getServer().getPluginManager().registerEvents(new SignChangeListener(this), this);
+        this.getServer().getPluginManager().registerEvents(new SignChangeListener(), this);
     }
 }

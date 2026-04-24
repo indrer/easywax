@@ -20,6 +20,8 @@ public class MessageHandler {
 
     private static final Component ONLY_PLAYER_CAN_SEND_COMMAND = PREFIX.append(Component.text("Only player can send command.", NamedTextColor.RED));
 
+    private static final Component UNWAXED_SIGN_WARNING = PREFIX.append(Component.text("Your sign can be edited by other players, run /waxit to wax your sign.", NamedTextColor.RED));
+
     public static void sendWaxSuccess(Player player) {
         player.sendMessage(WAX_SUCCESSFUL);
     }
@@ -34,5 +36,9 @@ public class MessageHandler {
 
     public static void onlyPlayerCanSendCommand(CommandSender sender) {
         sender.sendMessage(ONLY_PLAYER_CAN_SEND_COMMAND);
+    }
+
+    public static void warnAboutUnwaxedSign(Player player) {
+        player.sendMessage(UNWAXED_SIGN_WARNING);
     }
 }
