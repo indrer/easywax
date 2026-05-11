@@ -1,4 +1,4 @@
-name: AutoWaxSign
+name: EasyWax
 version: 1.0.0
 main: me.miicro.easywax.EasyWax
 description: Allows waxing signs without honeycomb

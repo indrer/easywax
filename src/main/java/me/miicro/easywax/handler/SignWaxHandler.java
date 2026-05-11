@@ -1,6 +1,6 @@
 package me.miicro.easywax.handler;
 
-import me.miicro.easywax.EasyWax;
+import me.miicro.easywax.PluginProvider;
 import me.miicro.easywax.message.MessageHandler;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
@@ -14,11 +14,11 @@ import java.util.logging.Logger;
 public class SignWaxHandler {
 
     private final HashSet<UUID> playersWaxingSigns = new HashSet<>();
-    private final EasyWax easyWax;
+    private final PluginProvider pluginProvider;
     private final Logger logger;
 
-    public SignWaxHandler(EasyWax easyWax, Logger logger) {
-        this.easyWax = easyWax;
+    public SignWaxHandler(PluginProvider pluginProvider, Logger logger) {
+        this.pluginProvider = pluginProvider;
         this.logger = logger;
     }
 
@@ -32,15 +32,13 @@ public class SignWaxHandler {
             playersWaxingSigns.remove(uuid);
             return;
         }
-        Sign sign = (Sign) block.getState();
-        sign.setWaxed(true);
-        sign.update();
+        waxSign(block);
         playersWaxingSigns.remove(uuid);
         MessageHandler.sendWaxSuccess(player);
     }
 
     public void addPlayerWaxingSign(UUID uuid) {
-        Player player = easyWax.getServer().getPlayer(uuid);
+        Player player = pluginProvider.getServer().getPlayer(uuid);
         if (player == null || !player.isOnline()) {
             playersWaxingSigns.remove(uuid);
             logger.warning("Player " + uuid + " could not be found.");
@@ -54,7 +52,17 @@ public class SignWaxHandler {
         playersWaxingSigns.remove(uuid);
     }
 
-    private boolean isSign(Block b) {
+    public HashSet<UUID> getPlayersWaxingSigns() {
+        return playersWaxingSigns;
+    }
+
+    protected void waxSign(Block block) {
+        Sign sign = (Sign) block.getState();
+        sign.setWaxed(true);
+        sign.update();
+    }
+
+    protected boolean isSign(Block b) {
         return Tag.ALL_SIGNS.isTagged(b.getType()) || Tag.ALL_HANGING_SIGNS.isTagged(b.getType());
     }
 }

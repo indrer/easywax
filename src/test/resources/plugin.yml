@@ -1,0 +1,4 @@
+name: EasyWax
+version: 1.0.0
+main: me.miicro.easywax.EasyWax
+api-version: "1.21.11"

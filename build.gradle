@@ -8,15 +8,17 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-    maven{
+    maven {
         name = "papermc"
         url = uri("https://repo.papermc.io/repository/maven-public/")
     }
+    maven { url 'https://repo.mockbukkit.org/artifactory/mockbukkit/' }
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation 'org.mockbukkit.mockbukkit:mockbukkit-v1.21:4.0.0'
+    testImplementation 'org.mockito:mockito-core:5.11.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")
 }
@@ -36,4 +38,5 @@ tasks {
 
 test {
     useJUnitPlatform()
+    jvmArgs '-XX:+EnableDynamicAgentLoading'
 }

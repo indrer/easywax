@@ -1,4 +1,4 @@
-package me.miicro.easywax.listiner;
+package me.miicro.easywax.listener;
 
 import me.miicro.easywax.handler.SignWaxHandler;
 import org.bukkit.event.EventHandler;
